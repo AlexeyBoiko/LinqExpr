@@ -35,7 +35,7 @@ LinqExpr library has "WhereOverlap" method for that:
 using System.Linq;
 using LinqExpr;
 
-var ordersFiltred = orders
+var ordersFiltered = orders
 	.WhereOverlap(
 		// set up search fields
 		// MemberExpressions (Orders has Start, End fields)
@@ -57,7 +57,7 @@ class Trip {
 }
 ```
 ```cs
-var tripsFiltred = trips
+var tripsFiltered = trips
 	.WhereOverlap(
 		// set up search fields
 		// MemberExpressions (Trip has From, To fields)
