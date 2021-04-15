@@ -69,7 +69,7 @@ var tripsFiltred = trips
 		to: DateTime.Now)
 	.ToList();
 ```
-WhereOverlap - is reusable predicate builder. You can applay it to any type of ojects, because WhereOverlap allow to set up serach fields.
+WhereOverlap - is reusable predicate builder. You can applay it to any type of ojects, because WhereOverlap allow to set up search fields.
 
 ## Built-in reusable queries
 ### WhereOverlap
