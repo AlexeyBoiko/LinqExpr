@@ -10,25 +10,22 @@ The library uses "[A universal PredicateBuilder](https://petemontgomery.wordpres
 ## Navigation
 * [Introduction](#introduction)
 * [Built-in reusable queries](#built-in-reusable-queries)
-  * [WhereOverlap](#whereOverlap)
-  * [Predicate.WhereOverlap](#predicatewhereOverlap)
+  * [WhereOverlap](#whereoverlap)
+  * [Predicate.WhereOverlap](#predicatewhereoverlap)
   * [WhereInRange](#whereinrange)
   * [Predicate.WhereInRange](#predicatewhereinrange)
 * [How to make your reusable linq query](#how-to-make-your-reusable-linq-query)
 
 ## Introduction
-The library contains reusable Linq queries. The library also allows you to make your own reusable Linq queries.
+The library contains [built-in reusable Linq queries](#built-in-reusable-queries). The library also allows you to [make your own reusable Linq queries](#how-to-make-your-reusable-linq-query).
 
-For example, there are Order and Trip objects. Order and Trip has start and end DateTime fields:
+**What is reusable queries?**
+
+For example, you have Order object.
 ```cs
 class Order { 
 	public DateTime Start { get; set; }
 	public DateTime? End { get; set; }
-}
-
-class Trip { 
-	public DateTime? From { get; set; }
-	public DateTime? To { get; set; }
 }
 ```
 You need to find all the Orders that hit the specified time range.
@@ -54,6 +51,12 @@ MemberExpressions is used to set up search fields.
 
 The same "WhereOverlap" method can be applied to Trip:
 ```cs
+class Trip { 
+	public DateTime? From { get; set; }
+	public DateTime? To { get; set; }
+}
+```
+```cs
 var tripsFiltred = trips
 	.WhereOverlap(
 		// set up search fields
@@ -66,6 +69,8 @@ var tripsFiltred = trips
 		to: DateTime.Now)
 	.ToList();
 ```
+WhereOverlap - is reusable predicate builder. You can applay it to any type of ojects, because WhereOverlap allow to set up serach fields.
+
 ## Built-in reusable queries
 ### WhereOverlap
 Finds objects in a given range. Ranges of dates, numbers, decimal, float, etc. are supported.
