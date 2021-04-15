@@ -46,8 +46,8 @@ var ordersFiltred = orders
 		toField: oo => oo.End,
 
 		// set up search range
-		from: from,
-		to: to)
+		from: DateTime.Now.AddDays(-10),
+		to: DateTime.Now)
 	.ToList();
 ```
 MemberExpressions is used to set up search fields.
@@ -62,8 +62,8 @@ var tripsFiltred = trips
 		toField: oo => oo.To,
 
 		// set up search range
-		from: from,
-		to: to)
+		from: DateTime.Now.AddDays(-10),
+		to: DateTime.Now)
 	.ToList();
 ```
 ## Built-in reusable queries
@@ -299,7 +299,7 @@ class Premium {
 	public decimal Sum { get; set; }
 }
 ```
-Let's make a reusable query to find deductions greater than a certain limit:
+Let's make a reusable query to find Payouts and Premiums greater than a certain limit:
 ```cs
 using LinqExpr;
 
