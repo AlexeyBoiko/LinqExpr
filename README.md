@@ -1,5 +1,10 @@
 # LinqExpr
-[NuGet](https://www.nuget.org/packages/LinqExpr/)
+[NuGet](https://www.nuget.org/packages/LinqExpr/) 
+
+[Article "Creating reusable Linq filters (predicate builders for Where) that can be applied to different types"](https://alexey-boyko.medium.com/creating-reusable-linq-filters-predicate-builders-for-where-that-can-be-applied-to-different-f7b292c6c9a7)
+
+---
+
 
 .Net library for creating reusable Linq queries. The library allows you to use MemberExpression to specify the fields of an object used in a query. For example: a reusable query to find objects that intersect with a given period of time.
 
